@@ -23,7 +23,7 @@ App will determine if length of message has whole square root
   output: non whole number sqrt
 
 App will make perfect square grid if sqrt is whole number
-  iput: 36
+  input: 36
   output: 6x6
 
 App will make grid based off nonwhole number sqrt by rounding down the number for both row and col dimensions, then adding 1 to row
