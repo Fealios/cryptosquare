@@ -3,14 +3,17 @@ var input;
 var clean;
 var splitStr = [];
 var grid;
+var output = [];
+var final;
 function cryptoSquare(string) {
-  clean = string.replace(/[^a-z,0-9]/gi, '').toLowerCase();
+  clean = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
   // console.log(clean);
   splitStr = clean.split('');
   // console.log(splitStr);
   gridSize(splitStr.length);
   putInGrid(splitStr, row, col);
   scramble(grid);
+  console.log(final);
 }
 
 
@@ -52,13 +55,13 @@ function putInGrid(arr, row, col){
 
 
 function scramble(arr){
-  var output = [];
   for(i=0;i<col;i++){
     for(j=0;j<row;j++){
       output.push(arr[j][i]);
     }
   }
-  console.log(output.join(''));
+  // console.log(output.join(''));
+  final = (output.join('').replace(/(.{5})/g, "$1 "));
 }
 
 
