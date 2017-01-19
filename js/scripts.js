@@ -7,9 +7,10 @@ function cryptoSquare(string) {
   clean = string.replace(/[^a-z,0-9]/gi, '').toLowerCase();
   // console.log(clean);
   splitStr = clean.split('');
-  console.log(splitStr);
+  // console.log(splitStr);
   gridSize(splitStr.length);
   putInGrid(splitStr, row, col);
+  scramble(grid);
 }
 
 
@@ -20,21 +21,21 @@ function gridSize(length){
     // console.log('whole number');
     row = Math.sqrt(length);
     col = Math.sqrt(length);
-    console.log(row + 'row');
-    console.log(col + 'col');
+    // console.log(row + 'row');
+    // console.log(col + 'col');
   } //end of if
   else {
     // console.log("you're in the function");
     row = Math.round(Math.sqrt(length));
     col = Math.ceil(Math.sqrt(length));
-    console.log(row +'row');
-    console.log(col +'col');
+    // console.log(row +'row');
+    // console.log(col +'col');
   } //end of else
 }
 // end of grid size ============================
 
 function putInGrid(arr, row, col){
-  console.log(arr);
+  // console.log(arr);
   var gridi = [];
   for(i=0;i<row;i++){
     var gridj = [];
@@ -46,7 +47,18 @@ function putInGrid(arr, row, col){
     gridi.push(gridj);
   } //end of i loop
   grid = gridi;
-  console.log(grid);
+  // console.log(grid);
+}
+
+
+function scramble(arr){
+  var output = [];
+  for(i=0;i<col;i++){
+    for(j=0;j<row;j++){
+      output.push(arr[j][i]);
+    }
+  }
+  console.log(output.join(''));
 }
 
 
